@@ -2,144 +2,60 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TeamUp — SaaS для командної роботи</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS-сервіс для командної роботи</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Навігація -->
-  <nav class="navbar">
-    <div class="container nav-container">
-    <h2 class="logo">Team<span style="font-weight:300;">Up</span></h2>
-      <ul class="nav-links">
-        <li><a href="#features">Можливості</a></li>
-        <li><a href="#about">Про нас</a></li>
-        <li><a href="#pricing">Тарифи</a></li>
-        <li><a href="#reviews">Відгуки</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container">
-      <h1>TeamUp — об'єднуємо команди для кращої співпраці</h1>
-      <p>Простий, ефективний та адаптивний SaaS-сервіс для управління командною роботою</p>
-      <a href="#pricing" class="btn">Спробувати безкоштовно</a>
-    </div>
+  <header class="reveal">
+    <h1 class="logo">TeamSync</h1>
+    <nav>
+      <a href="#features">Можливості</a>
+      <a href="#about">Про нас</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <button id="themeToggle">🌙 Змінити тему</button>
   </header>
 
-  <!-- Features -->
-  <section id="features" class="features">
-    <div class="container">
-      <h2>Можливості</h2>
-      <ul>
-        <li>Управління проєктами та завданнями</li>
-        <li>Реальний час оновлення</li>
-        <li>Комунікація в межах команди</li>
-        <li>Звіти та аналітика</li>
-      </ul>
-    </div>
+  <section class="hero reveal">
+    <h2>Простий та ефективний сервіс для командної роботи</h2>
+    <p>Плануйте, комунікуйте та досягайте разом!</p>
+    <button class="cta">Спробувати безкоштовно</button>
   </section>
 
-  <!-- Про нас -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>Про нас</h2>
-      <p>TeamUp — це сучасний хмарний сервіс, створений для підтримки ефективної взаємодії в командах будь-якого розміру. Ми прагнемо зробити співпрацю простою та зручною, незалежно від того, де знаходяться ваші співробітники.</p>
-    </div>
+  <section id="features" class="features reveal">
+    <h2>Наші можливості</h2>
+    <ul>
+      <li>Спільні проєкти</li>
+      <li>Чати та відеодзвінки</li>
+      <li>Інтеграція з Google Drive</li>
+    </ul>
   </section>
 
-  <!-- Тарифи -->
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <h2>Тарифи</h2>
-      <div class="pricing-cards">
-        <div class="card">
-          <h3>Базовий</h3>
-          <p class="price">Безкоштовно</p>
-          <ul>
-            <li>До 3 користувачів</li>
-            <li>5 GB сховища</li>
-            <li>Базова аналітика</li>
-          </ul>
-          <button class="btn">Почати</button>
-        </div>
-        <div class="card">
-          <h3>Профі</h3>
-          <p class="price">$9/міс</p>
-          <ul>
-            <li>Необмежена кількість користувачів</li>
-            <li>100 GB сховища</li>
-            <li>Розширені звіти</li>
-          </ul>
-          <button class="btn">Обрати</button>
-        </div>
-      </div>
-    </div>
+  <section id="stats" class="reveal">
+    <div class="counter" data-target="1500">0</div>
+    <p>Користувачів вже приєдналося</p>
   </section>
 
-  <!-- Відгуки -->
-  <section id="reviews" class="reviews">
-    <div class="container">
-      <h2>Що кажуть наші користувачі</h2>
-      <div class="review">
-        <p>"TeamUp повністю змінив наш підхід до управління проєктами!"</p>
-        <span>— Олена, менеджер проєктів</span>
-      </div>
-      <div class="review">
-        <p>"Простий інтерфейс, зручна інтеграція, все супер!"</p>
-        <span>— Ігор, маркетолог</span>
-      </div>
-    </div>
+  <section id="about" class="reveal">
+    <h2>Про нас</h2>
+    <p>Ми - команда, яка створила сервіс, щоб ваша команда була продуктивною.</p>
   </section>
 
-  <!-- Футер -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 TeamUp. Усі права захищені.</p>
-      <div class="socials">
-        <a href="#">Facebook</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
-      </div>
-    </div>
-  </footer>
+  <section id="contact" class="reveal">
+    <h2>Контакти</h2>
+    <p>Пишіть нам: support@teamsync.com</p>
+  </section>
 
-  <!-- Модальне вікно -->
-  <div class="modal" id="modal">
+  <div id="subscribeModal" class="modal">
     <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h2>Підпишіться на наші новини</h2>
-      <p>Будьте в курсі оновлень та нових функцій</p>
-      <input type="email" placeholder="Ваш Email" />
-      <button class="btn">Підписатися</button>
+      <span class="close">&times;</span>
+      <h2>Підпишіться на новини</h2>
+      <input type="email" placeholder="Введіть ваш email" />
+      <button>Підписатися</button>
     </div>
   </div>
 
-  <!-- JavaScript -->
-  <script>
-    // Модальне вікно через 10 секунд
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('modal').style.display = 'block';
-      }, 10000);
-    });
-
-    // Закриття модального
-    document.getElementById('closeModal').addEventListener('click', () => {
-      document.getElementById('modal').style.display = 'none';
-    });
-
-    // Закрити по кліку поза модальним вікном
-    window.addEventListener('click', (e) => {
-      const modal = document.getElementById('modal');
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,27 +1,33 @@
+/* Градієнтний фон з анімацією */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(270deg, #89f7fe, #66a6ff);
+  background: linear-gradient(-45deg, #89f7fe, #66a6ff, #a18cd1, #fbc2eb);
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
   color: #333;
   transition: background 0.5s, color 0.5s;
 }
 
+/* Анімація градієнта */
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Хедер */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
@@ -34,6 +40,12 @@ nav a {
   margin: 0 15px;
   text-decoration: none;
   color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #4e54c8;
 }
 
 button {
@@ -43,14 +55,13 @@ button {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: #6a82fb;
+  transform: scale(1.05);
 }
 
 .hero {
@@ -60,18 +71,27 @@ button:hover {
 
 .features, #about, #contact, #stats {
   padding: 60px 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 20px auto;
   border-radius: 16px;
+  max-width: 900px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.features ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  font-size: 1.1em;
 }
 
 .counter {
   font-size: 48px;
   font-weight: bold;
   text-align: center;
+  color: #4e54c8;
 }
 
+/* Модальне вікно */
 .modal {
   display: none;
   position: fixed;
@@ -91,12 +111,25 @@ button:hover {
   border-radius: 8px;
   width: 300px;
   text-align: center;
+  position: relative;
+}
+
+.modal-content input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 85%;
 }
 
 .close {
   position: absolute;
   right: 20px;
-  top: 100px;
+  top: 15px;
   font-size: 24px;
   cursor: pointer;
 }
@@ -108,10 +141,29 @@ button:hover {
 }
 
 .dark-mode header,
-.dark-mode section {
+.dark-mode section,
+.dark-mode .modal-content {
   background: #1e1e1e;
+  color: #f0f0f0;
 }
 
+.dark-mode nav a {
+  color: #f0f0f0;
+}
+
+.dark-mode nav a:hover {
+  color: #a18cd1;
+}
+
+.dark-mode button {
+  background-color: #a18cd1;
+}
+
+.dark-mode button:hover {
+  background-color: #d1b3ff;
+}
+
+/* Reveal ефект при скролі */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -121,4 +173,22 @@ button:hover {
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .features, #about, #contact, #stats {
+    padding: 40px 15px;
+    margin: 15px;
+  }
 }
